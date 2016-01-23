@@ -1,0 +1,45 @@
+package com.psl.bean;
+
+
+//@Entity
+//@Table(name = "CATEGORY")
+public class Category {
+
+	public Category(String categoryName) {
+		super();
+		this.categoryName = categoryName;
+	}
+
+	//@Id
+	//@GeneratedValue
+	private int categoryId;
+
+	private String categoryName;
+	private Set<Product> products;
+
+	public Category() {
+	}
+
+	
+
+	public int getCategoryId() {
+		return categoryId;
+	}
+
+
+
+	public void setCategoryId(int categoryId) {
+		this.categoryId = categoryId;
+	}
+
+
+
+	public String getCategoryName() {
+		return categoryName;
+	}
+
+	public void setCategoryName(String categoryName) {
+		this.categoryName = categoryName;
+	}
+
+}

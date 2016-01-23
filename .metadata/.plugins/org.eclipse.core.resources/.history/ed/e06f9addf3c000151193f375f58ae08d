@@ -1,0 +1,90 @@
+<%@ page language="java" contentType="text/html; charset=ISO-8859-1"
+    pageEncoding="ISO-8859-1"%>
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
+<title>Insert title here</title>
+</head>
+<body>
+<%!
+public Product call(int proid){
+ProductDao product =new ProductDaoImpl();
+/* int max=5;
+int min=1;
+double random=Math.floor(Math.random() * (max + min -1)) + min;
+List<Product> list=product.getProductByCategoryId(1); */
+Product p=product.getProduct(proid);
+return p;
+}
+%>
+<script type="text/javascript">
+var pimage;
+var pname,pprice;
+window.onload = function(){
+	 loadFridge();
+ 	loadElectronics();
+	loadIron();  
+}
+function loadFridge(){
+	
+		<% 
+		for(int i=1;i<5;i++)
+		 {
+			System.out.println(i);
+			Product pro=call(i);
+			String pname=pro.getProductName();
+			double pprice=pro.getProductPrice();
+		%>
+		var html = '<div class="col-sm-3 col-lg-3 col-md-3" ><div class="thumbnail"><img id="pim" src="images/'+"<%=pname%>"+'.jpeg"  alt="" width="320px" height="150px"><div class="caption"><h4><a href="#">'+"<%=pname%>"+'</a></h4><h4>'+'<%=pprice%>'+'</h4></div><div class="ratings"><p><span class="glyphicon glyphicon-star"></span><span class="glyphicon glyphicon-star"></span><span class="glyphicon glyphicon-star"></span><span class="glyphicon glyphicon-star"></span><span class="glyphicon glyphicon-star"></span></p><p>15 reviews</p></div></div>';
+		var newDiv;
+		newDiv = document.createElement("DIV");
+		newDiv.innerHTML = html;
+		/*newDiv.id = "field" + itemID;*/
+		document.getElementById('fridge').insertBefore(newDiv,null);
+	<%}%>	
+}
+function loadElectronics(){
+	<% 
+	for(int i=6;i<10;i++)
+	 {
+		System.out.println(i);
+		
+		Product pro=call(i);
+		System.out.println(pro.getProductName());
+		String pname=pro.getProductName();
+		double pprice=pro.getProductPrice();
+	%>
+	var html = '<div class="col-sm-3 col-lg-3 col-md-3" ><div class="thumbnail"><img id="pac" src="images/'+"<%=pname%>"+'.jpeg"  alt="" width="320px" height="150px"><div class="caption"><h4><a href="#">'+"<%=pname%>"+'</a></h4><h4>'+'<%=pprice%>'+'</h4></div><div class="ratings"><p><span class="glyphicon glyphicon-star"></span><span class="glyphicon glyphicon-star"></span><span class="glyphicon glyphicon-star"></span><span class="glyphicon glyphicon-star"></span><span class="glyphicon glyphicon-star"></span></p><p>15 reviews</p></div></div>';
+	var newDiv;
+	newDiv = document.createElement("DIV");
+	newDiv.innerHTML = html;
+	/*newDiv.id = "field" + itemID;*/
+	document.getElementById('ac').insertBefore(newDiv,null);
+<%}%>	
+	
+	
+}
+function loadIron(){
+	<% 
+	for(int i=10;i<14;i++)
+	 {
+		System.out.println(i);
+		
+		Product pro=call(i);
+		System.out.println(pro.getProductName());
+		String pname=pro.getProductName();
+		double pprice=pro.getProductPrice();
+	%>
+	var html = '<div class="col-sm-3 col-lg-3 col-md-3" ><div class="thumbnail"><img id="pac" src="images/'+"<%=pname%>"+'.jpeg"  alt="" width="320px" height="150px"><div class="caption"><h4><a href="#">'+"<%=pname%>"+'</a></h4><h4>'+'<%=pprice%>'+'</h4></div><div class="ratings"><p><span class="glyphicon glyphicon-star"></span><span class="glyphicon glyphicon-star"></span><span class="glyphicon glyphicon-star"></span><span class="glyphicon glyphicon-star"></span><span class="glyphicon glyphicon-star"></span></p><p>15 reviews</p></div></div>';
+	var newDiv;
+	newDiv = document.createElement("DIV");
+	newDiv.innerHTML = html;
+	/*newDiv.id = "field" + itemID;*/
+	document.getElementById('iron').insertBefore(newDiv,null);
+<%}%>	
+	
+	
+}
+</body>
+</html>

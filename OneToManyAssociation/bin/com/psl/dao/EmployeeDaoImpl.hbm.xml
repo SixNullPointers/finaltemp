@@ -1,0 +1,9 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<!-- Generated Dec 18, 2015 12:04:26 PM by Hibernate Tools 3.4.0.CR1 -->
+<hibernate-mapping>
+    <subclass name="com.psl.dao.EmployeeDaoImpl" extends="com.psl.dao.EmployeeDao" discriminator-value="EmployeeDaoImpl" lazy="false">
+        <property name="id" type="java.lang.Long">     <column name="ID" />     </property>
+    </subclass>
+</hibernate-mapping>

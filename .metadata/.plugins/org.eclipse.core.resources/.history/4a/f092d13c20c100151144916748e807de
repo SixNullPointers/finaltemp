@@ -1,0 +1,98 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE hibernate-mapping PUBLIC
+	"-//Hibernate/Hibernate mapping DTD 3.0//EN"
+	"http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+
+<hibernate-mapping>
+
+	<class name="com.psl.bean.Category">
+		<id name="categoryId" type="integer">
+			<generator class="increment"></generator>
+		</id>
+		<property name="categoryName" type="string" />
+		
+		 <set name="products" cascade="all">
+        <key column="empId"></key>
+        <one-to-many class="com.psl.bean.Vehicle"/>
+        </set>
+		
+	</class>
+	<!-- 
+	<class name="com.psl.bean.Employee" table="EMPLOYEE">
+        <id name="empId" type="int"> </id>
+        
+        <property name="empName" type="java.lang.String"> </property>
+        
+        <property name="salary" type="double"></property>
+        
+        <property name="dateOfBirth" type="date"></property>
+        
+        <property name="marital_Status" type="boolean"></property>
+        
+        <set name="vehicles" cascade="all">
+        <key column="empId"></key>
+        <one-to-many class="com.psl.bean.Vehicle"/>
+        </set>
+        </class> -->
+
+	<class name="com.psl.bean.Customer">
+		<id name="customerId" type="integer">
+			<generator class="increment"></generator>
+			
+		</id>
+		
+		<property name="firstName" type="string" />
+		<property name="lastName" type="string" />
+		<property name="email" type="string" />
+		<property name="contactNo" type="string" />
+		<!-- <property name="status" type="string" /> -->
+		<property name="status">
+			<type name="org.hibernate.type.EnumType">
+				<param name="enumClass">com.psl.bean.CustomerStatus</param>
+				<param name="useNamed">true</param>
+			</type>
+		</property>
+		<one-to-one name="login" class="com.psl.bean.Login" cascade="all"></one-to-one>
+	</class>
+
+
+<!-- -->
+	<class name="com.psl.bean.Login">
+		 <id name="loginId" type="integer">
+			<generator class="foreign" >   <!--  for making emp id as vehicle id in vehicle tbl -->
+            <param name="property">customer</param>
+            </generator>
+		</id> 
+		<property name="username" type="string" />
+		
+		<property name="password" type="string" />
+	<one-to-one name="customer" class="com.psl.bean.Customer"   ></one-to-one>
+	</class> 
+	
+	
+	
+	
+	<class name="com.psl.bean.Product">
+		<id name="productId" type="integer">
+			<generator class="increment"></generator>
+		</id>
+		<property name="productName" type="string" />
+		<property name="productPrice" type="double" />
+		<property name="productFeature" type="string" />
+		<many-to-one name="Category" class="com.psl.bean.Category"
+			column="categoryId" unique="true" not-null="true" cascade="all" lazy="false" />
+	</class>
+	
+	<class name="com.psl.bean.Query">
+		<id name="queryId" type="integer">
+			<generator class="increment"></generator>
+		</id>
+		<property name="queryMessage" type="string" />
+		<property name="queryDate" type="date" />
+		<many-to-one name="Product" class="com.psl.bean.Product"
+			column="productId" unique="true" not-null="true" cascade="all" />
+		<many-to-one name="Customer" class="com.psl.bean.Customer"
+			column="customerId" unique="true" not-null="true" cascade="all" />
+	</class>
+	
+</hibernate-mapping>

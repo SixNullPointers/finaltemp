@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<qualifiedTypeNameHistroy>
+<fullyQualifiedTypeName name="org.hibernate.SQLQuery"/>
+<fullyQualifiedTypeName name="java.lang.String"/>
+<fullyQualifiedTypeName name="com.psl.dao.RequestDaoImpl"/>
+<fullyQualifiedTypeName name="java.util.Map"/>
+<fullyQualifiedTypeName name="java.util.HashMap"/>
+<fullyQualifiedTypeName name="java.util.HashSet"/>
+<fullyQualifiedTypeName name="javax.persistence.OneToMany"/>
+<fullyQualifiedTypeName name="javax.persistence.JoinColumn"/>
+<fullyQualifiedTypeName name="java.util.List"/>
+<fullyQualifiedTypeName name="org.apache.commons.collections.iterators.ArrayListIterator"/>
+<fullyQualifiedTypeName name="java.util.ArrayList"/>
+<fullyQualifiedTypeName name="java.util.Set"/>
+<fullyQualifiedTypeName name="com.psl.bean.Category"/>
+<fullyQualifiedTypeName name="com.psl.bean.Product"/>
+<fullyQualifiedTypeName name="com.psl.bean.Customer"/>
+<fullyQualifiedTypeName name="com.psl.bean.Login"/>
+<fullyQualifiedTypeName name="com.psl.bean.Review"/>
+<fullyQualifiedTypeName name="com.psl.dao.ReviewDaoImpl"/>
+<fullyQualifiedTypeName name="com.psl.dao.CustomerDaoImpl"/>
+<fullyQualifiedTypeName name="com.psl.dao.ProductDaoImpl"/>
+</qualifiedTypeNameHistroy>

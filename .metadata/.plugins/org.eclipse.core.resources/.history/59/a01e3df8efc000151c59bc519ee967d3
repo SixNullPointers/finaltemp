@@ -1,0 +1,219 @@
+package com.psl.client;
+
+import java.util.Date;
+
+import com.psl.bean.Category;
+import com.psl.bean.Customer;
+import com.psl.bean.CustomerStatus;
+import com.psl.bean.Login;
+import com.psl.bean.Product;
+import com.psl.bean.Query;
+import com.psl.bean.QueryReplyDetails;
+import com.psl.bean.RequestDetails;
+import com.psl.bean.RequestStatus;
+import com.psl.bean.Review;
+import com.psl.bean.ReviewReplyDetails;
+import com.psl.dao.CategoryDaoImpl;
+import com.psl.dao.CustomerDaoImpl;
+import com.psl.dao.LoginDaoImpl;
+import com.psl.dao.ProductDaoImpl;
+import com.psl.dao.QueryDaoImpl;
+import com.psl.dao.QueryReplyDaoImpl;
+import com.psl.dao.RequestDaoImpl;
+import com.psl.dao.ReviewDaoImpl;
+import com.psl.dao.ReviewReplyDaoImpl;
+
+public class Client {
+
+/**
+ * @param args
+ */
+public static void main(String[] args) {
+//	ReviewDaoImpl r=new ReviewDaoImpl();
+//	System.out.println("here"+r.getReviewListbyProductId(1));
+//	System.out.println(r.getCustomernameByReview(r.getReviewListbyProductId(1)));
+//	
+	/*Category cat = new Category();
+	//cat.setCategoryId(1);
+	cat.setCategoryName("Electronics");
+
+	CategoryDaoImpl dao = new CategoryDaoImpl();
+	dao.insertCategory(cat);
+	System.out.println("Record inserted");
+	
+	Customer cust = new Customer();
+	//cust.setCustomerId(1);
+	cust.setFirstName("mayur");
+	cust.setLastName("narawade");
+	cust.setContactNo("9654345678");
+	cust.setEmail("mayurn37@gmail.com");
+	cust.setStatus(CustomerStatus.ACTIVE);
+	
+	CustomerDaoImpl daocust = new CustomerDaoImpl();
+	daocust.insertCustomer(cust);
+	System.out.println("customer inserted");
+	
+	
+	Login login = new Login();
+	login.setUsername("mayur");
+	login.setPassword("mayur");
+	login.setCustomer(cust);
+	LoginDaoImpl daologin = new LoginDaoImpl();
+	daologin.insertLogin(login);
+	System.out.println("Login inserted");
+	
+	
+	Product product = new Product();
+	product.setProductName("Dell Inspiron 3521");
+	product.setProductPrice(250.00);
+	product.setCategory(cat);
+	
+	ProductDaoImpl daoprod = new ProductDaoImpl();
+	daoprod.insertProduct(product);
+	System.out.println("Product Inserted");
+	
+	Query query = new Query();
+	query.setQueryMessage("How is this lapy");
+	query.setQueryDate(new Date());
+	query.setProduct(product);
+	query.setCustomer(cust);
+	
+	QueryDaoImpl daoquery = new QueryDaoImpl();
+	daoquery.insertQuery(query);
+	
+	QueryReplyDetails qreply = new QueryReplyDetails();
+	qreply.setReplyMessage("The lapy is amazing");
+	qreply.setQuery(query);
+	qreply.setReplyDate(new Date());
+	qreply.setCustomer(cust);
+	
+	QueryReplyDaoImpl daoqrepy = new QueryReplyDaoImpl();
+	daoqrepy.insertQueryReply(qreply);
+	
+	RequestDetails request = new RequestDetails();
+	request.setCustomer(cust);
+	request.setProduct(product);
+	request.setStatus(RequestStatus.INPROGRESS);
+	
+	RequestDaoImpl daoreq = new RequestDaoImpl();
+	daoreq.insertRequest(request);
+	
+	
+	Review review = new Review();
+	review.setCustomer(cust);
+	review.setProduct(product);
+	review.setReviewDate(new Date());
+	review.setReviewMessage("Comfortable and easy to use lapy....really good");
+	
+	
+	ReviewDaoImpl reviewDaoImpl = new ReviewDaoImpl();
+	reviewDaoImpl.insertReview(review);
+	
+	ReviewReplyDetails reviewReply = new ReviewReplyDetails();
+	reviewReply.setCustomer(cust);
+	reviewReply.setReplyDate(new Date());
+	reviewReply.setReplyMessage("Yes I agree");
+	reviewReply.setReview(review);
+	
+	ReviewReplyDaoImpl reviewReplyDaoImpl = new ReviewReplyDaoImpl();
+	reviewReplyDaoImpl.insertReviewReply(reviewReply);*/
+	
+	
+	System.out.println("client started");
+	Category cat = new Category("Refrigerator");
+	Category cat1 = new Category("Air Conditioner");
+	Category cat2 = new Category("Iron");
+	Category cat3 = new Category("Oven");
+	Category cat4 = new Category("Tv");
+	Category cat5 = new Category("Camera");
+	Category cat6 = new Category("Mobile");
+	Category cat7 = new Category("Laptop");
+	Category cat8 = new Category("Tablet");
+	Category cat9 = new Category("PC");
+	Category cat10 = new Category("Pen Drive");
+	Category cat11 = new Category("Hard Discs");
+	Category cat12 = new Category("Earphone");
+	Category cat13 = new Category("Headphone");
+	Category cat14 = new Category("Shoes");
+	Category cat15 = new Category("Watches");
+
+	CategoryDaoImpl dao = new CategoryDaoImpl();
+	/*dao.insertCategory(cat);
+	dao.insertCategory(cat1);
+	dao.insertCategory(cat2);
+	dao.insertCategory(cat3);
+	dao.insertCategory(cat4);
+	dao.insertCategory(cat5);
+	dao.insertCategory(cat6);
+	dao.insertCategory(cat7);
+	dao.insertCategory(cat8);
+	dao.insertCategory(cat9);
+	dao.insertCategory(cat10);
+	dao.insertCategory(cat11);
+	dao.insertCategory(cat12);
+	dao.insertCategory(cat13);
+	dao.insertCategory(cat14);
+	dao.insertCategory(cat15);*/
+
+	System.out.println("Record inserted");
+
+	/*Customer cust = new Customer();
+	// cust.setCustomerId(1);
+	cust.setFirstName("Om");
+	cust.setLastName("Shankar");
+	cust.setContactNo("9654345678");
+	cust.setEmail("om.shankar@gmail.com");
+	cust.setStatus(CustomerStatus.ACTIVE);
+
+	CustomerDaoImpl daocust = new CustomerDaoImpl();
+	daocust.insertCustomer(cust);
+	System.out.println("customer inserted");
+
+	Login login = new Login();
+	login.setUsername("omshankar");
+	login.setPassword("omshankar");
+	login.setCustomer(cust);
+	LoginDaoImpl daologin = new LoginDaoImpl();
+	daologin.insertLogin(login);
+	System.out.println("Login inserted");*/
+	
+	//Refrigerator Entries
+	/*Product product1 = new Product("Whirlpool 205 CLS 3S 190 L Single Door Refrigerator",56000.00,"Number of Shelves: 2,3 Star Rating,Direct Cool,Color: Solid Wine,Top Freezer Refrigerator,WxHxD: 536 mm X 1191 mm X 604 mm",cat1);
+	Product product2=new Product("Whirlpool 200 GENIUS CLS PLUS 3S 185 L Single Door Refrigerator", 46000.00,"Number of Shelves: 2,3 Star Rating,Direct Cool,Color: Blush Exotica,Top Freezer Refrigerator,WxHxD: 536 mm X 1159 mm X 604 mm", cat2);
+	Product product3=new Product("LG GL-B252VPGY 240 L Double Door Refrigerator", 20000.00, "Number of Shelves: 2,2 Star Rating,Frost Free,Color: Wine Blossom,Top Freezer Refrigerator,WxHxD: 550 mm X 1450 mm X 685 mm", cat3);
+	Product product4=new Product("Samsung RT33JSMFESZTL 321 L Double Door Refrigerator",100000.00, "Number of Shelves: 4,4 Star Rating,Frost Free,Color: Tender Lily Silver,Top Freezer Refrigerator,WxHxD: 600 mm X 1635 mm X 722 mm", cat4);
+	Product product5=new Product("Samsung RS21HZLMR1XT 585 L Side by Side Refrigerator",150000.00, "Number of Shelves: 5,Frost Free,Color:Mirror,Glass,Side by Side,Refrigerator,WxHxD: 912 mm X 1789 mm X 734 mm", cat5);
+	*/
+	
+	//AC entries
+/*	Product product1 = new Product("Hitachi RAU023EUEA 2 Ton Inverter Split AC",80000.00,"Inverter Star Rating,Power: 1900 W,Power Requirement : AC 230 V, 50 Hz,Auto Restart,Remote Control",cat6);
+	Product product2=new Product("Godrej GSC 18 FG 6 SOG 1.5 Ton 5 Star Split AC", 46000.00,"Number of Shelves: 2,3 Star Rating,Direct Cool,Color: Blush Exotica,Top Freezer Refrigerator,WxHxD: 536 mm X 1159 mm X 604 mm", cat7);
+	Product product3=new Product("Voltas 185EY(R) 1.5 Ton 5 Star Split AC", 20000.00, "Number of Shelves: 2,2 Star Rating,Frost Free,Color: Wine Blossom,Top Freezer Refrigerator,WxHxD: 550 mm X 1450 mm X 685 mm", cat8);
+	Product product4=new Product("Voltas 185EY(S) 1.5 Ton 5 Star Split AC",100000.00, "Number of Shelves: 4,4 Star Rating,Frost Free,Color: Tender Lily Silver,Top Freezer Refrigerator,WxHxD: 600 mm X 1635 mm X 722 mm", cat9);
+	Product product5=new Product("Samsung RS21HZLMR1XT 585 L Side by Side Refrigerator",150000.00, "Number of Shelves: 5,Frost Free,Color:Mirror,Glass,Side by Side,Refrigerator,WxHxD: 912 mm X 1789 mm X 734 mm", cat10);
+	
+*/	//Iron entries
+	/*Product product1 = new Product("Philips GC1905 Steam Iron, 1440 W",800.00,"Steam1440 W Power Consumption,DrySpray Iron,Self Cleaning Feature,1.8 m Cord Length,Variable Steam Control,180 Degree Swivel Cord",cat11);
+	Product product2=new Product("Philips GC1010 Steam Iron", 460.00,"Dry,Steam Iron,Linished,Aluminium Soleplate,Steam Burst Feature,1200 W Power Consumption,Temperature Control,Self Cleaning Feature,150 ml Water Tank Capacity", cat12);
+	Product product3=new Product("Bajaj Majesty MX3 Steam Iron", 200.00, "Self Cleaning Feature,Non-stick Coated Soleplate,Dry,Water Spray,Spray Iron,1250 W Power Consumption,Steam,Variable Steam Control", cat13);
+	Product product4=new Product("Blue Me Regular Dry Iron",249.00, "Automatic Shut Off,Teflon Non-Stick Coated,750 W Power Consumption,Temperature Control", cat14);
+	//Product product5=new Product("Samsung RS21HZLMR1XT 585 L Side by Side Refrigerator",599.00, "Number of Shelves: 5,Frost Free,Color:Mirror,Glass,Side by Side,Refrigerator,WxHxD: 912 mm X 1789 mm X 734 mm", cat15);
+	*/
+	
+	/*Product product1 = new Product("Philips GC1905 Steam Iron, 1440 W",800.00,"Steam1440 W Power Consumption,DrySpray Iron,Self Cleaning Feature,1.8 m Cord Length,Variable Steam Control,180 Degree Swivel Cord",cat11);
+	Product product2=new Product("Philips GC1010 Steam Iron", 460.00,"Dry,Steam Iron,Linished,Aluminium Soleplate,Steam Burst Feature,1200 W Power Consumption,Temperature Control,Self Cleaning Feature,150 ml Water Tank Capacity", cat12);
+	Product product3=new Product("Bajaj Majesty MX3 Steam Iron", 200.00, "Self Cleaning Feature,Non-stick Coated Soleplate,Dry,Water Spray,Spray Iron,1250 W Power Consumption,Steam,Variable Steam Control", cat13);
+	Product product4=new Product("Blue Me Regular Dry Iron",249.00, "Automatic Shut Off,Teflon Non-Stick Coated,750 W Power Consumption,Temperature Control", cat14);
+	*/
+	
+	/*ProductDaoImpl daoprod = new ProductDaoImpl();
+	daoprod.insertProduct(product1);
+	daoprod.insertProduct(product2);
+	daoprod.insertProduct(product3);
+	daoprod.insertProduct(product4);*/
+	//daoprod.insertProduct(product5);
+	
+	
+	
+}
+}

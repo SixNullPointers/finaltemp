@@ -1,0 +1,14 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<!-- Generated Dec 18, 2015 12:04:26 PM by Hibernate Tools 3.4.0.CR1 -->
+<hibernate-mapping>
+    <class name="com.psl.Employee" table="EMPLOYEE">
+        <id name="empID" type="int">      <column name="EMPID" />       <generator class="assigned" /> </id>
+        <property name="empName" type="java.lang.String">    <column name="EMPNAME" /></property>
+        <property name="salary" type="int">       <column name="SALARY" /></property>
+        <property name="dateOfBirth" type="timestamp">       <column name="DATEOFBIRTH" /></property>
+        <one-to-one name="vehical" cascade="all"></one-to-one>
+    </class>
+    
+</hibernate-mapping>
